@@ -2,12 +2,13 @@ using UnityEngine;
 
 public class BaseGun : MonoBehaviour
 {
-    public Camera fpsCamera;
     // public ParticleSystem muzzleFlash;
     // public GameObject impactEffect;
 
     public float damage = 10f;
     public float range = 100f;
+
+    Camera fpsCamera;
 
     void Shoot()
     {
@@ -27,6 +28,12 @@ public class BaseGun : MonoBehaviour
             // Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
         }
 
+    }
+
+    void Start()
+    {
+        if (fpsCamera == null)
+            fpsCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>() as Camera;
     }
 
     void Update()
