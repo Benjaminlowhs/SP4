@@ -45,6 +45,7 @@ public class BaseGun : MonoBehaviour
     {
         if (fpsCamera == null)
             fpsCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>() as Camera;
+        currentMagSize = magSize;
     }
 
     void Update()
@@ -60,14 +61,14 @@ public class BaseGun : MonoBehaviour
         }
 
         if (Time.time >= nextTimeReloadFinish)
+        {
             isReloading = false;
+        }
 
         if (Input.GetKeyDown(KeyCode.R) && Time.time >= nextTimeReloadFinish)
         {
             Reload();
             nextTimeReloadFinish = Time.time + reloadTime;
         }
-        
-        Debug.Log(currentMagSize);
     }
 }
