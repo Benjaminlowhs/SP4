@@ -6,6 +6,7 @@ public class Spawner : MonoBehaviour
 {
     public int counter;
     public GameObject[] enemies;
+    public Transform spawner;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,6 @@ public class Spawner : MonoBehaviour
     public void spawnEnemy()
     {
         if (--counter == 0) CancelInvoke("spawnEnemy");
-        Instantiate(enemies[0], new Vector3(Random.Range(0, 5), 0, Random.Range(0, 5)), Quaternion.identity);
+        Instantiate(enemies[0], new Vector3(Random.Range(spawner.position.x - 2, spawner.position.x + 2), 0, Random.Range(spawner.position.z - 2, spawner.position.z + 2)), Quaternion.identity);
     }
 }
