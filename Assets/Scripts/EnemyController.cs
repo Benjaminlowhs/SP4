@@ -30,20 +30,25 @@ public class EnemyController : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         animator = GetComponent<Animator>();
         animator.SetBool("isWalking", true);
         target = GameObject.FindGameObjectWithTag("Player").transform;
+        enemy.SetDestination(target.position);
+        
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         enemy.SetDestination(target.position);
-        if (isChasing)
+
+        if (Vector3.Distance(enemy.transform.position, target.position) < 3f)
         {
-            animator.SetBool("isWalking", true);
+            GetComponent<Animator>().SetTrigger("Attack");
+            Debug.Log("Attack");
         }
 
     }

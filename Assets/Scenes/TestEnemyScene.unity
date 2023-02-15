@@ -259,13 +259,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZombieWithAnimation
       objectReference: {fileID: 0}
+    - target: {fileID: 5787350224266721973, guid: fdde70aa554ea7645967c276fe07a5f1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5787350224267011733, guid: fdde70aa554ea7645967c276fe07a5f1, type: 3}
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5787350224267011733, guid: fdde70aa554ea7645967c276fe07a5f1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -14.19
       objectReference: {fileID: 0}
     - target: {fileID: 5787350224267011733, guid: fdde70aa554ea7645967c276fe07a5f1, type: 3}
       propertyPath: m_LocalPosition.y
@@ -675,7 +679,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1385679671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -690,7 +694,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   counter: 10
   enemies:
-  - {fileID: 4745183217978665681, guid: eae072d61057f7446a7129c3459b780b, type: 3}
+  - {fileID: 5787350224266721973, guid: fdde70aa554ea7645967c276fe07a5f1, type: 3}
   spawner: {fileID: 1385679672}
 --- !u!4 &1385679672
 Transform:
