@@ -8,8 +8,11 @@ public class EnemyController : MonoBehaviour
     public NavMeshAgent enemy;
     private Transform target;
 
+    Animator animator;
+
     public float health = 50f;
     public float speed = 1.5f;
+    private bool isChasing = true;
 
     public void TakeDamage(float damage)
     {
@@ -29,6 +32,8 @@ public class EnemyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
+        animator.SetBool("isWalking", true);
         target = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
@@ -36,5 +41,10 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         enemy.SetDestination(target.position);
+        if (isChasing)
+        {
+            animator.SetBool("isWalking", true);
+        }
+
     }
 }

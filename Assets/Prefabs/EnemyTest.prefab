@@ -606,6 +606,7 @@ GameObject:
   - component: {fileID: 7972982715986740320}
   - component: {fileID: 7972982715986740335}
   - component: {fileID: 5219614722011755373}
+  - component: {fileID: 265040204960649100}
   m_Layer: 0
   m_Name: EnemyTest
   m_TagString: Untagged
@@ -696,6 +697,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 7972982715986740335}
   health: 50
+  speed: 1.5
+--- !u!95 &265040204960649100
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4745183217978665681}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: b2402638ee60fe74d9c707ec9ceac2b2, type: 3}
+  m_Controller: {fileID: 9100000, guid: 71f54e19d8b944245a2b4d177cce2165, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &4787106199604243188
 GameObject:
   m_ObjectHideFlags: 0
