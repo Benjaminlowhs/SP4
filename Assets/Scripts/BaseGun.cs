@@ -2,17 +2,23 @@ using UnityEngine;
 
 public class BaseGun : MonoBehaviour
 {
-    // public ParticleSystem muzzleFlash;
-    // public GameObject impactEffect;
+    public ParticleSystem muzzleFlash;
 
     public float damage = 10f;
     public float range = 100f;
+    public float fireRate = 1f;
+    public int magSize = 5;
+    public float reloadTime = 5f;
 
     Camera fpsCamera;
+    float nextTimeToFire = 0f;
+    float currentMagSize = 5;
+    float nextTimeReloadFinish = 0f;
+    bool isReloading = false;
 
     void Shoot()
     {
-        // muzzleFlash.Play();
+        muzzleFlash.Play();
 
         RaycastHit hit;
         if (Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out hit, range))
@@ -25,9 +31,14 @@ public class BaseGun : MonoBehaviour
                 enemy.TakeDamage(damage);
             }
 
-            // Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
         }
 
+    }
+
+    void Reload()
+    {
+        isReloading = true;
+        currentMagSize = magSize;
     }
 
     void Start()
@@ -38,9 +49,25 @@ public class BaseGun : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire && currentMagSize > 0)
         {
+            if (isReloading)
+                return;
+
             Shoot();
+            nextTimeToFire = Time.time + 1f/fireRate;
+            currentMagSize -= 1;
         }
+
+        if (Time.time >= nextTimeReloadFinish)
+            isReloading = false;
+
+        if (Input.GetKeyDown(KeyCode.R) && Time.time >= nextTimeReloadFinish)
+        {
+            Reload();
+            nextTimeReloadFinish = Time.time + reloadTime;
+        }
+        
+        Debug.Log(currentMagSize);
     }
 }
