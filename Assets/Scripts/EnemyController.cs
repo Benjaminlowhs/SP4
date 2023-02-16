@@ -52,4 +52,13 @@ public class EnemyController : MonoBehaviour
         }
 
     }
+
+    void OnDestroy()
+    {
+        if (GameObject.FindGameObjectWithTag("Spawner") != null)
+        {
+            GameObject.FindGameObjectWithTag("Spawner").GetComponent<Spawner>().spawnedEnemies.Remove(gameObject);
+        }
+
+    }
 }

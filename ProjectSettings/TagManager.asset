@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Item
   - BloodSpray
+  - Spawner
   layers:
   - Default
   - TransparentFX
