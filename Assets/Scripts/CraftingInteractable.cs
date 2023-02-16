@@ -6,37 +6,12 @@ public class CraftingInteractable : MonoBehaviour, IInteractable
 {	
 	[SerializeField] private string interactText;
 	[SerializeField] private PlayerInteract playerInteract;
-	[SerializeField] private GameObject craftingPanel;
-	private bool isOpen;
+	[SerializeField] private GameObject craftingContainer;
+	[SerializeField] private GameObject Table;
 
-	private void Start()
-	{
-		isOpen = false;
-	}
-
-	public void ShowPanel()
-	{
-		craftingPanel.SetActive(true);
-		interactText = "Press 'E' to Exit";
-		isOpen = true;
-	}
-
-	public void HidePanel()
-	{
-		craftingPanel.SetActive(false);
-		interactText = "Press 'E' to Craft";
-		isOpen = false;
-	}
 	public void Interact(Transform interactorTransform)
 	{
-		if (!isOpen)
-		{
-			ShowPanel();
-		}
-		else
-		{
-			HidePanel();
-		}
+		Debug.Log("Interact");
 	}
 
 	public string GetInteractText()

@@ -170,8 +170,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactText: Press 'E' to Craft
-  playerInteract: {fileID: 0}
-  craftingPanel: {fileID: 0}
 --- !u!1 &5523008464821479290
 GameObject:
   m_ObjectHideFlags: 0
