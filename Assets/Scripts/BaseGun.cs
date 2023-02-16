@@ -3,6 +3,7 @@ using UnityEngine;
 public class BaseGun : MonoBehaviour
 {
     public ParticleSystem muzzleFlash;
+    public GameObject bloodSpray;
 
     public float damage = 10f;
     public float range = 100f;
@@ -28,6 +29,7 @@ public class BaseGun : MonoBehaviour
             EnemyController enemy = hit.transform.GetComponent<EnemyController>();
             if (enemy != null)
             {
+                Instantiate(bloodSpray, hit.point, Quaternion.LookRotation(hit.normal));
                 enemy.TakeDamage(damage);
             }
 
@@ -45,6 +47,7 @@ public class BaseGun : MonoBehaviour
     {
         if (fpsCamera == null)
             fpsCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>() as Camera;
+
         currentMagSize = magSize;
     }
 

@@ -5485,6 +5485,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   muzzleFlash: {fileID: 3474638440328194184}
+  bloodSpray: {fileID: 70728814195497533, guid: 1c3b68db7e41a1d4b88ea347410ce9dc, type: 3}
   damage: 40
   range: 100
   fireRate: 1
