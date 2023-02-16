@@ -12,7 +12,7 @@ public class EnemyController : MonoBehaviour
 
     public float health = 50f;
     public float speed = 1.5f;
-    private bool isChasing = true;
+    //private bool isChasing = true;
 
     public void TakeDamage(float damage)
     {

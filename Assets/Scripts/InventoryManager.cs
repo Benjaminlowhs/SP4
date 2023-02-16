@@ -80,9 +80,6 @@ public class InventoryManager : MonoBehaviour
 
         for(int i =0; i<Items.Count;i++)
         {
-            Debug.Log("Itemcount "+ Items.Count);
-            Debug.Log("int i " +i);
-
             InventoryItems[i].AddItem(Items[i]);
         }
     }
