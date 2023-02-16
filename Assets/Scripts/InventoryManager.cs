@@ -56,8 +56,9 @@ public class InventoryManager : MonoBehaviour
         SetInventoryItems();
     }
 
+
     public void EnableItemsRemove()
-    {
+        {
         if(EnableRemove.isOn)
         {
             foreach (Transform item in ItemContent)
