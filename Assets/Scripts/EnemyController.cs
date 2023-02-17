@@ -13,6 +13,7 @@ public class EnemyController : MonoBehaviour
     public float health = 50f;
     public float speed = 1.5f;
     private bool isMobilized = true;
+    private Player player;
     //private bool isChasing = true;
 
     public void TakeDamage(float damage)
@@ -36,6 +37,7 @@ public class EnemyController : MonoBehaviour
         animator = GetComponent<Animator>();
         animator.SetBool("isWalking", true);
         target = GameObject.FindGameObjectWithTag("Player").transform;
+        player = FindObjectOfType<Player>();
         enemy.SetDestination(target.position);
         
         
@@ -44,14 +46,14 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        GetComponent<Animator>().ResetTrigger("Attack");
+
         enemy.SetDestination(target.position);
+        GetComponent<Animator>().ResetTrigger("Attack");
         //enemy.transform.rotation = Quaternion.LookRotation(Vector3.forward, target.position);
         //enemy.transform.position = Vector3.MoveTowards(enemy.transform.position, target.position, speed * Time.deltaTime);
 
         if (Vector3.Distance(enemy.transform.position, target.position) < 3f)
         {
-            Debug.Log(enemy.transform.position + ":" + target.position);
             GetComponent<Animator>().SetTrigger("Attack");
             
             isMobilized = false;
@@ -76,6 +78,7 @@ public class EnemyController : MonoBehaviour
 
     void Attack()
     {
-        Debug.Log("Attack");
+        player.TakeDamage(10);
+        Debug.Log("Attackingg");
     }
 }

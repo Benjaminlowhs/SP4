@@ -68,9 +68,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  currentHealth: 0
-  healthBar: {fileID: 0}
+  currentHealth: -260
+  healthBar: {fileID: 2007356015994057668, guid: 70704b2006408374bac9487b3b4fb6a5, type: 3}
   flashLight: {fileID: 8742911275051078589}
+  player: {fileID: 1163585400488887595}
 --- !u!114 &6236108114093989558
 MonoBehaviour:
   m_ObjectHideFlags: 0
