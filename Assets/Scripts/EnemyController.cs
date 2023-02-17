@@ -12,6 +12,7 @@ public class EnemyController : MonoBehaviour
 
     public float health = 50f;
     public float speed = 1.5f;
+    private bool isMobilized = true;
     //private bool isChasing = true;
 
     public void TakeDamage(float damage)
@@ -41,16 +42,27 @@ public class EnemyController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+        GetComponent<Animator>().ResetTrigger("Attack");
         enemy.SetDestination(target.position);
+        //enemy.transform.rotation = Quaternion.LookRotation(Vector3.forward, target.position);
+        //enemy.transform.position = Vector3.MoveTowards(enemy.transform.position, target.position, speed * Time.deltaTime);
 
         if (Vector3.Distance(enemy.transform.position, target.position) < 3f)
         {
+            Debug.Log(enemy.transform.position + ":" + target.position);
             GetComponent<Animator>().SetTrigger("Attack");
-            Debug.Log("Attack");
+            
+            isMobilized = false;
+           
         }
 
+    }
+
+    void ResetMobility()
+    {
+        isMobilized = true;    
     }
 
     void OnDestroy()
@@ -60,5 +72,10 @@ public class EnemyController : MonoBehaviour
             GameObject.FindGameObjectWithTag("Spawner").GetComponent<Spawner>().spawnedEnemies.Remove(gameObject);
         }
 
+    }
+
+    void Attack()
+    {
+        Debug.Log("Attack");
     }
 }
