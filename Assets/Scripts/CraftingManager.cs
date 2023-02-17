@@ -5,17 +5,20 @@ using UnityEngine.UI;
 
 public class CraftingManager : MonoBehaviour
 {
+	public static CraftingManager Instance;
 	public Slot[] craftingSlots;
-	private Slot outputSlot;
+	[SerializeField] private ResultSlot outputSlot;
 
-	private Item currentItem;
-	public Image customCursor;
+	[SerializeField]private List<Recipe> recipeList;
 
-	private List<Recipe> recipeList;
-
-	public CraftingManager(List<Recipe> recipeList)
+	private void Awake()
 	{
-		this.recipeList = recipeList;
+		Instance = this;
+	}
+
+	private void Update()
+	{
+		GetRecipeOutput();
 	}
 
 	public bool IsEmpty(int i)
@@ -25,56 +28,38 @@ public class CraftingManager : MonoBehaviour
 
 	public Item GetItem(int i)
 	{
-		return craftingSlots[i].item;
+		return craftingSlots[i].slottedItem;
 	}
 	private Item GetRecipeOutput()
 	{			
-		bool completeRecipe = true;
-		foreach (Recipe recipe in recipeList)
-		{
-			for (int i = 0; i < craftingSlots.Length; i++)
-			{
-				if (recipe != null)
-				{
-					if (IsEmpty(i) || GetItem(i) != recipe.GetItem(craftingSlots,i))
-					{
+		foreach (Recipe recipe in recipeList){		
+			bool completeRecipe = true;
+			for (int i = 0; i < craftingSlots.Length; i++){
+				if (recipe.GetItem(craftingSlots,i) != null){
+					if (IsEmpty(i) || GetItem(i) != recipe.GetItem(craftingSlots,i)){
 						// Empty position or different itemType
 						completeRecipe = false;
 					}
 				}
 			}
-			if (completeRecipe)	
-			{
+			if (completeRecipe){
 				return recipe.resultItem;
 			}
-
+			Debug.Log("Recipe Output" + recipe.resultItem);
 		}
-
 
 		return null;
 	}
 
-	private void CreateOutput()
+	public void AddCreatedItem()
 	{
-		Item recipeOutput = GetRecipeOutput();
-		if (recipeOutput != null)
+		if (GetRecipeOutput() != null)
 		{
-			outputSlot.SetItem(recipeOutput);
+			InventoryManager.Instance.Add(GetRecipeOutput());
+			Debug.Log("Item added to Inventory");
+			Debug.Log(GetRecipeOutput());
 		}
-	}
-
-	public void AddToInventory()
-	{
 
 	}
 
-	public void OnMouseDownItem(Item item)
-	{
-		if (currentItem == null)
-		{
-			currentItem = item;
-			customCursor.gameObject.SetActive(true);
-			customCursor.sprite = currentItem.icon;
-		}
-	}
 }

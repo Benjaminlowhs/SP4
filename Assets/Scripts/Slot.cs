@@ -1,17 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class Slot : MonoBehaviour
 {
-	public Item item;
-	public int index;
+	public Item slottedItem;
+	public ItemController slottedControllerItem;
 
-	public void SetItem(Item outputItem)
+	public int index;
+	public GameObject itemImage;
+	public List<GameObject> slots = new List<GameObject>();
+	public static Slot Instance;
+
+	private void Awake()
 	{
-		if (index == 4)
-		{
-			item = outputItem;
-		}
+		Instance = this;
+	}
+	public void SetSprite()
+	{
+		itemImage.GetComponent<Image>().sprite = slottedItem.icon;
+	}
+	public void AddItem(Item item)
+	{
+		slottedItem = item;
 	}
 }

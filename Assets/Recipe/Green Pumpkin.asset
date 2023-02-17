@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f406c61158d2d64798065f2e3bf154a, type: 3}
+  m_Name: Green Pumpkin
+  m_EditorClassIdentifier: 
+  item1: {fileID: 11400000, guid: 468e97a99fe0aab43b756771822dde02, type: 2}
+  item2: {fileID: 11400000, guid: 028deef9cdd48eb4bb93af907ff7fe67, type: 2}
+  item3: {fileID: 0}
+  item4: {fileID: 0}
+  resultItem: {fileID: 11400000, guid: 0ea4dc0672f05224c9678e66d78e56c9, type: 2}

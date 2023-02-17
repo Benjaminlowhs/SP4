@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class InventoryItemController : MonoBehaviour
 {
     Item item;
-
     public Button RemoveButton;
   
     public void RemoveItem()
@@ -20,4 +19,43 @@ public class InventoryItemController : MonoBehaviour
     {
         item = newitem;
     }
+
+    public void AddToSlot()
+    {
+		switch (Slot.Instance.index)
+		{
+			case 2:
+				if (Slot.Instance.slottedItem == null)
+				{
+					Slot.Instance.AddItem(item);
+					RemoveItem();
+
+				}
+				break;
+			case 1:
+				if (Slot.Instance.slottedItem == null)
+				{
+					Slot.Instance.AddItem(item);
+					RemoveItem();
+
+				}
+				break;
+			case 0:
+				if (Slot.Instance.slottedItem == null)
+				{
+					Slot.Instance.AddItem(item);
+					RemoveItem();
+
+				}
+				break;
+			case 3:
+				if (Slot.Instance.slottedItem == null)
+				{
+					Slot.Instance.AddItem(item);
+					RemoveItem();
+
+				}
+				break;
+		}
+	}
 }

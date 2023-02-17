@@ -13,10 +13,10 @@ public class Recipe : ScriptableObject
 
 	public Item GetItem(Slot[] slots, int i)
 	{
-		if (slots[i].item = item1) return item1;
-		if (slots[i].item = item2) return item2;
-		if (slots[i].item = item3) return item3;
-		if (slots[i].item = item4) return item4;
+		if (slots[i].slottedItem == item1) return item1;
+		else if (slots[i].slottedItem == item2) return item2;
+		else if (slots[i].slottedItem == item3) return item3;
+		else if (slots[i].slottedItem == item4) return item4;
 		
 		return null;
 	}
