@@ -24,8 +24,6 @@ public class BaseGun : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out hit, range))
         {
-            Debug.Log(hit.transform.name);
-
             EnemyController enemy = hit.transform.GetComponent<EnemyController>();
             if (enemy != null)
             {
