@@ -4,6 +4,7 @@ public class BaseGun : MonoBehaviour
 {
     public ParticleSystem muzzleFlash;
     public GameObject bloodSpray;
+    public AudioSource bangSound;
 
     public float damage = 10f;
     public float range = 100f;
@@ -20,6 +21,8 @@ public class BaseGun : MonoBehaviour
     void Shoot()
     {
         muzzleFlash.Play();
+
+        bangSound.Play();
 
         RaycastHit hit;
         if (Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out hit, range))
