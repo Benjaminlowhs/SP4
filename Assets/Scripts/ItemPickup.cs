@@ -20,6 +20,8 @@ public class ItemPickup : MonoBehaviour
         InventoryManager.Instance.Add(Item);
         Debug.Log("AAAAAAAAAAAA");
         Destroy(gameObject);
+        panel.SetActive(false);
+
     }
 
     private void OnMouseDown()
@@ -31,9 +33,9 @@ public class ItemPickup : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("in " + other);
-        panel.SetActive(true);
         if (other.gameObject.tag == "Player")
         {
+            panel.SetActive(true);
             Debug.Log("Do something else here");
             inrange = true;
         }
