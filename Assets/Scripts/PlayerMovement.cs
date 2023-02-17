@@ -35,6 +35,12 @@ public class PlayerMovement : MonoBehaviour
                 isRunning = true;
             }
 
+            if (currentStamina <= 0)
+            {
+                isRunning = false;
+                isRegenStamina = true;
+            }
+
             if (currentStamina >= maxStamina)
                 isRegenStamina = false;
         }
