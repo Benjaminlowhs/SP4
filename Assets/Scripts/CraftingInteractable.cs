@@ -13,7 +13,10 @@ public class CraftingInteractable : MonoBehaviour, IInteractable
 	{
 		isOpen = false;
 	}
-
+	public bool GetOpenStatus()
+	{
+		return isOpen;
+	}
 	public void ShowPanel()
 	{
 		craftingPanel.SetActive(true);
