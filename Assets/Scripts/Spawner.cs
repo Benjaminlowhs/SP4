@@ -17,6 +17,9 @@ public class Spawner : MonoBehaviour
     private float waveTimer;
     private float spawnInterval;
     private float spawnTimer;
+    public GameObject Block;
+
+
 
     public List<GameObject> spawnedEnemies = new List<GameObject>();
     // Start is called before the first frame update
@@ -65,6 +68,11 @@ public class Spawner : MonoBehaviour
         }
     }
 
+    public int GetWave()
+    {
+        return currWave;
+    }
+
     public void GenerateWave()
     {
         waveValue = currWave * 10;
@@ -104,6 +112,14 @@ public class Spawner : MonoBehaviour
         }
         enemiesToSpawn.Clear();
         enemiesToSpawn = generatedEnemies;
+    }
+
+    void Update()
+    {
+        if (currWave >= 2)
+        {
+            Block.SetActive(false);
+        }
     }
 
 }
