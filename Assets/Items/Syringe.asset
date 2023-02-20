@@ -15,4 +15,4 @@ MonoBehaviour:
   id: 8
   itemName: Syringe
   value: 5
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 1905ab9b325d8c0458a764bb85259c5b, type: 3}

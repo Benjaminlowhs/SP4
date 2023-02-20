@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f2a569a0a52313449f86209e44c3ced, type: 3}
-  m_Name: Green Pumpkin
+  m_Name: Green Herb
   m_EditorClassIdentifier: 
-  id: 12
-  itemName: Greem Pumpkin
+  id: 13
+  itemName: Green Herb
   value: 5
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 0d75ee45592196046a2ff279345b347c, type: 3}

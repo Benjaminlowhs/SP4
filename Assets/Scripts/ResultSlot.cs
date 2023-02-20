@@ -6,11 +6,31 @@ using UnityEngine.UI;
 public class ResultSlot : MonoBehaviour
 {
 	public Item craftedItem;
-	public GameObject itemImage;
 
+	public Sprite emptySprite;
+
+	private void Update()
+	{
+		if (craftedItem != null)
+		{
+			SetSprite();
+		}
+		else
+		{
+			SetDefaultSprite();
+		}
+	}
+	public void SetDefaultSprite()
+	{
+		if (craftedItem == null)
+		{
+			GetComponent<Image>().sprite = emptySprite;
+
+		}
+	}
 	public void SetSprite()
 	{
-		itemImage.GetComponent<Image>().sprite = craftedItem.icon;
+		GetComponent<Image>().sprite = craftedItem.icon;
 	}
 	public void AddItem(Item item)
 	{

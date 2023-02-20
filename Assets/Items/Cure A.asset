@@ -15,4 +15,4 @@ MonoBehaviour:
   id: 9
   itemName: Cure A
   value: 5
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 976e4530864eedc448d2d848dd93d253, type: 3}

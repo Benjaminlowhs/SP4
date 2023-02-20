@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6f406c61158d2d64798065f2e3bf154a, type: 3}
-  m_Name: Green Pumpkin
+  m_Name: Green Pump
   m_EditorClassIdentifier: 
-  item1: {fileID: 11400000, guid: 468e97a99fe0aab43b756771822dde02, type: 2}
+  item1: {fileID: 0}
   item2: {fileID: 11400000, guid: 028deef9cdd48eb4bb93af907ff7fe67, type: 2}
-  item3: {fileID: 0}
+  item3: {fileID: 11400000, guid: 468e97a99fe0aab43b756771822dde02, type: 2}
   item4: {fileID: 0}
   resultItem: {fileID: 11400000, guid: 0ea4dc0672f05224c9678e66d78e56c9, type: 2}
