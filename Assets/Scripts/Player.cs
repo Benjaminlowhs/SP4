@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class Player : MonoBehaviour
 {
@@ -32,6 +34,7 @@ public class Player : MonoBehaviour
         {
             flashLight.enabled = !flashLight.enabled;
         }
+        Death();
     }
 
     public void TakeDamage(int damage)
@@ -39,5 +42,15 @@ public class Player : MonoBehaviour
         Debug.Log("KOBe");
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
+    }
+
+    private void Death()
+    {
+        if(currentHealth<=0)
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            SceneManager.LoadScene("Lose");
+        }
     }
 }
