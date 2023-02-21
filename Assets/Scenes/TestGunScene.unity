@@ -178,6 +178,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Handgun
       objectReference: {fileID: 0}
+    - target: {fileID: 3474638441970050593, guid: c3005d35ed87a41479aa07e5f697a853, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3005d35ed87a41479aa07e5f697a853, type: 3}
 --- !u!1 &215985883

@@ -10,6 +10,8 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenuUI;
     public GameObject crosshair;
 
+    public GameObject bgmController;
+
     // Update is called once per frame
     void Update()
     {
@@ -34,8 +36,8 @@ public class PauseMenu : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         crosshair.SetActive(true);
+        bgmController.SetActive(true);
     }
-
     void Pause()
     {
         pauseMenuUI.SetActive(true);
@@ -44,6 +46,7 @@ public class PauseMenu : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         crosshair.SetActive(false);
+        bgmController.SetActive(false);
     }
 
     public void LoadOptions()
