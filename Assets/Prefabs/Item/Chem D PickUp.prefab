@@ -11,8 +11,11 @@ GameObject:
   - component: {fileID: 9102931048895025354}
   - component: {fileID: 3244820846855077732}
   - component: {fileID: 3688351003119150732}
+  - component: {fileID: 832033908988858635}
+  - component: {fileID: 5174736989773881442}
+  - component: {fileID: 1737747969716409231}
   m_Layer: 0
-  m_Name: Potion Purple
+  m_Name: Chem D PickUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -83,3 +86,43 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &832033908988858635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7211193893405750816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12c75a0ca699f0441a71ad1de270fb41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 55905742d8e7a5947b5e271e8216cbbf, type: 2}
+--- !u!114 &5174736989773881442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7211193893405750816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42e56377742354441a4ab53ded9b79b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Item: {fileID: 11400000, guid: 55905742d8e7a5947b5e271e8216cbbf, type: 2}
+  panel: {fileID: 0}
+--- !u!65 &1737747969716409231
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7211193893405750816}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.18979803, y: 0.23894009, z: 0.18979803}
+  m_Center: {x: 0, y: 0.024571028, z: 0}
