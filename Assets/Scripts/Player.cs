@@ -28,11 +28,6 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(20); 
-        }
-
         if (Input.GetKeyDown(KeyCode.F))
         {
             flashLight.enabled = !flashLight.enabled;

@@ -8,15 +8,15 @@ public class CraftingManager : MonoBehaviour
 	public Slot[] craftingSlots;
 	[SerializeField] private ResultSlot outputSlot;
 	public Item craftedItem;
-
 	[SerializeField]private List<Recipe> recipeList;
+	public GameObject Heli;
+	public GameObject Heli2;
 
-	public void Update()
-	{
-		if (GetCraftedItem() != null)
-		{
-			outputSlot.AddItem(GetCraftedItem());
-		}
+	private void Start()
+    {
+		Heli.SetActive(false);
+		Heli2.SetActive(false);
+
 	}
 
 	public bool IsEmpty(int i)
@@ -52,6 +52,8 @@ public class CraftingManager : MonoBehaviour
 		return null;
 	}
 
+
+
 	private void CreateOutput()
 	{
 		Item recipeOutput = GetRecipeOutput();
@@ -84,6 +86,7 @@ public class CraftingManager : MonoBehaviour
 			}
 			outputSlot.craftedItem = null;
 		}
+
 	}
 
 	public void ClearCraftingTable()
@@ -100,5 +103,28 @@ public class CraftingManager : MonoBehaviour
 
 		}
 	}
+
+	public void Update()
+	{
+		if (GetCraftedItem() != null)
+		{
+			Debug.Log(GetCraftedItem().itemName);
+			outputSlot.AddItem(GetCraftedItem());
+		}
+
+
+
+		if (GetCraftedItem().itemName == "Cure A")
+		{
+			Heli.SetActive(true);
+		}
+
+		if (GetCraftedItem().itemName == "Cure B")
+		{
+			Heli2.SetActive(true);
+		}
+	}
+
+
 
 }
