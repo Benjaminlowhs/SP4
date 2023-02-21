@@ -71,7 +71,6 @@ MonoBehaviour:
   currentHealth: -260
   healthBar: {fileID: 2007356015994057668, guid: 70704b2006408374bac9487b3b4fb6a5, type: 3}
   flashLight: {fileID: 8742911275051078589}
-  player: {fileID: 1163585400488887595}
 --- !u!114 &6236108114093989558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -418,7 +417,7 @@ Light:
   m_Color: {r: 1, g: 1, b: 0.5411765, a: 1}
   m_Intensity: 1
   m_Range: 30
-  m_SpotAngle: 40
+  m_SpotAngle: 100
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
