@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f2a569a0a52313449f86209e44c3ced, type: 3}
   m_Name: RBullet
   m_EditorClassIdentifier: 
-  id: 2
+  id: 23
   itemName: Rifle Bullet
   value: 45
   icon: {fileID: 21300000, guid: 8b74dc99007ed7c4a8259934fcc0f8e5, type: 3}

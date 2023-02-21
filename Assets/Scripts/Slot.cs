@@ -25,7 +25,6 @@ public class Slot : MonoBehaviour
 		if (slottedItem == null)
 		{
 			GetComponent<Image>().sprite = emptySprite;
-
 		}
 	}
 	public void SetSprite()

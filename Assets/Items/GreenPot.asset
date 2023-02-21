@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f2a569a0a52313449f86209e44c3ced, type: 3}
   m_Name: GreenPot
   m_EditorClassIdentifier: 
-  id: 3
+  id: 21
   itemName: ZaZa
   value: 5
   icon: {fileID: 21300000, guid: 33ee051c1e8b30947a35945e24c864c6, type: 3}

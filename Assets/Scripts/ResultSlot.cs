@@ -25,7 +25,6 @@ public class ResultSlot : MonoBehaviour
 		if (craftedItem == null)
 		{
 			GetComponent<Image>().sprite = emptySprite;
-
 		}
 	}
 	public void SetSprite()

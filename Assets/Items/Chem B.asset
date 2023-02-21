@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f2a569a0a52313449f86209e44c3ced, type: 3}
   m_Name: Chem B
   m_EditorClassIdentifier: 
-  id: 6
+  id: 2
   itemName: Chem B
   value: 5
   icon: {fileID: 21300000, guid: 222e23cf3e5057942ba6125a725bafcd, type: 3}

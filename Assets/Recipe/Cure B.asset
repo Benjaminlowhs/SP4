@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f406c61158d2d64798065f2e3bf154a, type: 3}
   m_Name: Cure B
   m_EditorClassIdentifier: 
-  item1: {fileID: 11400000, guid: 2da51e03b359b0742a8dd49213e6531c, type: 2}
+  item1: {fileID: 11400000, guid: d59466510437a1442b7eb41a290ead94, type: 2}
   item2: {fileID: 11400000, guid: dc429fd48727ffc42bff3f51c30d55ee, type: 2}
-  item3: {fileID: 11400000, guid: d59466510437a1442b7eb41a290ead94, type: 2}
+  item3: {fileID: 11400000, guid: 2da51e03b359b0742a8dd49213e6531c, type: 2}
   item4: {fileID: 11400000, guid: 028deef9cdd48eb4bb93af907ff7fe67, type: 2}
   resultItem: {fileID: 11400000, guid: de4dcd03a52db7f439ed89b67529fac7, type: 2}

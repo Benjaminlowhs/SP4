@@ -18,10 +18,11 @@ public class CraftingManager : MonoBehaviour
 			outputSlot.AddItem(GetCraftedItem());
 		}
 	}
-	//public bool IsEmpty(int i)
-	//{
-	//	return craftingSlots[i] == null;
-	//}
+
+	public bool IsEmpty(int i)
+	{
+		return craftingSlots[i] == null;
+	}
 
 	public Item GetItem(int i)
 	{
@@ -36,7 +37,7 @@ public class CraftingManager : MonoBehaviour
 			{
 				if (recipe.GetItem(i) != null)
 				{
-					if (GetItem(i) == null || GetItem(i) != recipe.GetItem(i))
+					if (IsEmpty(i) || GetItem(i) != recipe.GetItem(i))
 					{
 						// Empty position or different itemType
 						completeRecipe = false;
@@ -61,7 +62,6 @@ public class CraftingManager : MonoBehaviour
 		else
 		{
 			craftedItem = recipeOutput;
-			//outputSlot.AddItem(craftedItem);
 		}
 		
 	}
@@ -80,7 +80,6 @@ public class CraftingManager : MonoBehaviour
 			Debug.Log(GetCraftedItem());
 			for (int i = 0; i < craftingSlots.Length; i++)
 			{
-				//Debug.Log(craftingSlots.Length+"ACI");
 				craftingSlots[i].slottedItem = null;
 			}
 			outputSlot.craftedItem = null;
@@ -93,12 +92,11 @@ public class CraftingManager : MonoBehaviour
 		{
 			if (craftingSlots[i].slottedItem != null)
 			{
-				//Debug.Log(craftingSlots.Length+"CCT");
-
 				InventoryManager.Instance.Add(craftingSlots[i].slottedItem);
 				craftingSlots[i].slottedItem = null;
-
 			}
+			outputSlot.craftedItem = null;
+
 
 		}
 	}

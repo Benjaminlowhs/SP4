@@ -24,6 +24,7 @@ public class CraftingInteractable : MonoBehaviour, IInteractable
 	{
 		Inventory.SetActive(true);
 		craftingPanel.SetActive(true);
+		Time.timeScale = 0.0f;
 		interactText = "Press 'E' to Exit";
 		Cursor.visible = true;
 		isOpen = true;
@@ -36,6 +37,7 @@ public class CraftingInteractable : MonoBehaviour, IInteractable
 		Inventory.SetActive(false);
 		InventoryManager.Instance.CleanItems();
 		craftingPanel.SetActive(false);
+		Time.timeScale = 1.0f;
 		interactText = "Press 'E' to Craft";
 		Cursor.visible = false;
 		isOpen = false;
