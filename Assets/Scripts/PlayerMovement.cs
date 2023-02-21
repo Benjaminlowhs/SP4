@@ -22,6 +22,8 @@ public class PlayerMovement : MonoBehaviour
     Vector3 velocity;
     bool isGrounded;
 
+    AudioSource footstepSource;
+
     void Movement(float x, float z)
     {
         Vector3 move;
@@ -68,6 +70,8 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         currentStamina = maxStamina;
+
+        footstepSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -87,5 +91,10 @@ public class PlayerMovement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
+
+        if (isGrounded && (x != 0 || z != 0))
+            footstepSource.enabled = true;
+        else
+            footstepSource.enabled = false;
     }
 }
