@@ -5,16 +5,20 @@ using UnityEngine.Rendering.PostProcessing;
 public class NightVision : MonoBehaviour
 {
     [SerializeField]
-    private Color defaultLightColor;
+    Color defaultLightColor;
     [SerializeField]
-    private Color boostedLightColor;
+    Color boostedLightColor;
 
-    private bool isNightVisionEnabled;
+    bool isNightVisionEnabled;
+    float nightVisionBattery;
 
-    private PostProcessVolume volume;
+    PostProcessVolume volume;
 
     void ToggleNightVision()
     {
+        if (nightVisionBattery < 0)
+            return;
+
         isNightVisionEnabled = !isNightVisionEnabled;
 
         if (isNightVisionEnabled)
@@ -35,6 +39,8 @@ public class NightVision : MonoBehaviour
 
         volume = gameObject.GetComponent<PostProcessVolume>();
         volume.weight = 0;
+
+        nightVisionBattery = 100f;
     }
 
     void Update()
@@ -43,5 +49,8 @@ public class NightVision : MonoBehaviour
         {
             ToggleNightVision();
         }
+
+        if (isNightVisionEnabled)
+            nightVisionBattery -= 0.3f * Time.deltaTime;
     }
 }
