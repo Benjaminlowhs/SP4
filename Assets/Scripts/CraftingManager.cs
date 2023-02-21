@@ -5,17 +5,12 @@ using UnityEngine.UI;
 
 public class CraftingManager : MonoBehaviour
 {
-	public static CraftingManager Instance;
 	public Slot[] craftingSlots;
 	[SerializeField] private ResultSlot outputSlot;
 	public Item craftedItem;
 
 	[SerializeField]private List<Recipe> recipeList;
 
-	private void Awake()
-	{
-		Instance = this;
-	}
 	public void Update()
 	{
 		if (GetCraftedItem() != null)
@@ -97,11 +92,11 @@ public class CraftingManager : MonoBehaviour
 		{
 			if (craftingSlots[i].slottedItem != null)
 			{
-				Item tempItem = craftingSlots[i].slottedItem;
-				InventoryManager.Instance.Add(tempItem);
+				InventoryManager.Instance.Add(craftingSlots[i].slottedItem);
+				craftingSlots[i].slottedItem = null;
+
 			}
 
-			craftingSlots[i].slottedItem = null;
 		}
 	}
 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemPickup : MonoBehaviour
+public class ItemPickup : MonoBehaviour, IInteractable
 {
     public Item Item;
     Camera fpsCamera;
@@ -61,5 +61,18 @@ public class ItemPickup : MonoBehaviour
         
     }
 
+	public void Interact(Transform interactorTransform)
+	{
+        Pickup();
+	}
 
+	public string GetInteractText()
+	{
+        return "Press 'E' to Pick Up";
+	}
+
+	public Transform GetTransform()
+	{
+        return transform;
+	}
 }

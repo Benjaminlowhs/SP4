@@ -11,8 +11,8 @@ public class InventoryItemController : MonoBehaviour
     public CraftingInteractable craftingInteractable;
 	private void Start()
 	{
-		slots = GameObject.FindObjectsOfType<Slot>();
-        craftingInteractable = GameObject.FindObjectOfType<CraftingInteractable>();
+		slots = FindObjectsOfType<Slot>();
+        craftingInteractable = FindObjectOfType<CraftingInteractable>();
 	}
 	public void RemoveItem()
     {
@@ -26,19 +26,20 @@ public class InventoryItemController : MonoBehaviour
         item = newitem;
     }
 
-    public void AddToSlot()
+    public void UseItem()
     {
         if (craftingInteractable.GetOpenStatus() == true)
         {
-            for (int i = 3; i >= 0; i--)
-            {
-                if (slots[i].slottedItem == null)
-                {
-                    slots[i].AddItem(item);
-                    RemoveItem();
-                    break;
-                }
-            }
-        }
+			for (int i = 0; i < slots.Length; i++)
+			{
+				if (slots[3 - i].slottedItem == null)
+				{
+					slots[3 - i].AddItem(item);
+					RemoveItem();
+
+					break;
+				}
+			}
+		}
 	}
 }
