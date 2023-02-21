@@ -13,6 +13,9 @@ public class Player : MonoBehaviour
 
     public Light flashLight;
 
+    public float bloodScreenCounter;
+    public GameObject bloodScreen;
+
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +37,16 @@ public class Player : MonoBehaviour
         {
             flashLight.enabled = !flashLight.enabled;
         }
+
+        if (bloodScreenCounter > 0)
+        {
+            bloodScreenCounter -= Time.fixedDeltaTime;
+            bloodScreen.SetActive(true);
+        }
+        else
+        {
+            bloodScreen.SetActive(false);
+        }
         Death();
     }
 
@@ -42,6 +55,7 @@ public class Player : MonoBehaviour
         Debug.Log("KOBe");
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
+        bloodScreenCounter = 5;
     }
 
     private void Death()

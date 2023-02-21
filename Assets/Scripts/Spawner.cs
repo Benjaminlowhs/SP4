@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Spawner : MonoBehaviour
 {
 
     public List<Enemy> enemies = new List<Enemy>();
     public int currWave;
-    private int waveValue;
+    public int waveValue;
     public List<GameObject> enemiesToSpawn = new List<GameObject>();
 
     public Transform[] spawnLocation;
@@ -18,6 +19,8 @@ public class Spawner : MonoBehaviour
     private float spawnInterval;
     private float spawnTimer;
     public GameObject Block;
+    public TMP_Text waveCounterText;
+    public TMP_Text zombieCounterText;
 
 
 
@@ -26,6 +29,7 @@ public class Spawner : MonoBehaviour
     void Start()
     {
         GenerateWave();
+        
     }
 
     // Update is called once per frame
@@ -50,14 +54,19 @@ public class Spawner : MonoBehaviour
                     spawnIndex = 0;
                 }
             }
-            else
-            {
-                waveTimer = 0; // if no enemies remain, end wave
-            }
+            //else
+            //{
+            //    waveTimer = 0; // if no enemies remain, end wave
+            //}
         }
         else
         {
             spawnTimer -= Time.fixedDeltaTime;
+            
+        }
+
+        if (spawnedEnemies.Count <= 0)
+        {
             waveTimer -= Time.fixedDeltaTime;
         }
 
@@ -66,6 +75,17 @@ public class Spawner : MonoBehaviour
             currWave++;
             GenerateWave();
         }
+
+        if (spawnedEnemies.Count + enemiesToSpawn.Count > 5)
+        {
+            zombieCounterText.text = "";
+        }
+        else
+        {
+            zombieCounterText.text = "Zombies left: " + (spawnedEnemies.Count + enemiesToSpawn.Count);
+        }
+
+        waveCounterText.text = ToRoman(currWave);
     }
 
     public int GetWave()
@@ -122,6 +142,28 @@ public class Spawner : MonoBehaviour
         }
     }
 
+    public static string ToRoman(int number)
+    {
+        if (number < 1) return "";
+        if (number >= 1000)
+        {
+            return "M" + ToRoman(number - 1000);
+        }
+        else if (number >= 900) { return "CM" + ToRoman(number - 900); }
+        else if (number >= 500) { return "D" + ToRoman(number - 500); }
+        else if (number >= 400) { return "CD" + ToRoman(number - 400); }
+        else if (number >= 100) { return "C" + ToRoman(number - 100); }
+        else if (number >= 90) {return "XC" + ToRoman(number - 90); }
+        else if (number >= 50) {return "L" + ToRoman(number - 50); }
+        else if (number >= 40) {return "XL" + ToRoman(number - 40); }
+        else if (number >= 10){ return "X" + ToRoman(number - 10); }
+        else if (number >= 9){ return "IX" + ToRoman(number - 9); }
+        else if (number >= 5){ return "V" + ToRoman(number - 5); }
+        else if (number >= 4) {return "IV" + ToRoman(number - 4); }
+        else { return "I" + ToRoman(number - 1); }
+
+    }
+    
 }
 
 [System.Serializable]
