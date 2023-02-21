@@ -44,7 +44,8 @@ public class Inventorybutton : MonoBehaviour
     {
         Inventory.SetActive(false);
         opened = false;
-        List.GetComponent<InventoryManager>().ListItems();
+        InventoryManager.Instance.CleanItems();
+        //List.GetComponent<InventoryManager>().ListItems();
 
     }
 }

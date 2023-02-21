@@ -9,10 +9,15 @@ public class InventoryItemController : MonoBehaviour
     public Button RemoveButton;
 	public Slot[] slots;
     public CraftingInteractable craftingInteractable;
-	private void Start()
+	//private void Start()
+	//{
+	//	slots = FindObjectsOfType<Slot>();
+ //       craftingInteractable = FindObjectOfType<CraftingInteractable>();
+	//}
+	private void Update()
 	{
 		slots = FindObjectsOfType<Slot>();
-        craftingInteractable = FindObjectOfType<CraftingInteractable>();
+		craftingInteractable = FindObjectOfType<CraftingInteractable>();
 	}
 	public void RemoveItem()
     {
@@ -32,9 +37,14 @@ public class InventoryItemController : MonoBehaviour
         {
 			for (int i = 0; i < slots.Length; i++)
 			{
+				//Debug.Log(slots.Length);
+				//Debug.Log("Contains " + slots[i].slottedItem);
+
+
 				if (slots[3 - i].slottedItem == null)
 				{
 					slots[3 - i].AddItem(item);
+					//Debug.Log("Add to Slot" + (3 - i));
 					RemoveItem();
 
 					break;

@@ -34,11 +34,11 @@ public class CraftingInteractable : MonoBehaviour, IInteractable
 	public void HidePanel()
 	{
 		Inventory.SetActive(false);
+		InventoryManager.Instance.CleanItems();
 		craftingPanel.SetActive(false);
 		interactText = "Press 'E' to Craft";
 		Cursor.visible = false;
 		isOpen = false;
-		InventoryList.GetComponent<InventoryManager>().ListItems();
 		Cursor.lockState = CursorLockMode.Locked;
 
 	}

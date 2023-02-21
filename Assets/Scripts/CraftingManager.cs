@@ -80,6 +80,7 @@ public class CraftingManager : MonoBehaviour
 			Debug.Log(GetCraftedItem());
 			for (int i = 0; i < craftingSlots.Length; i++)
 			{
+				//Debug.Log(craftingSlots.Length+"ACI");
 				craftingSlots[i].slottedItem = null;
 			}
 			outputSlot.craftedItem = null;
@@ -92,6 +93,8 @@ public class CraftingManager : MonoBehaviour
 		{
 			if (craftingSlots[i].slottedItem != null)
 			{
+				//Debug.Log(craftingSlots.Length+"CCT");
+
 				InventoryManager.Instance.Add(craftingSlots[i].slottedItem);
 				craftingSlots[i].slottedItem = null;
 

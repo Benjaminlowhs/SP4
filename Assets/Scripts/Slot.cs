@@ -35,5 +35,6 @@ public class Slot : MonoBehaviour
 	public void AddItem(Item item)
 	{
 		slottedItem = item;
+		Debug.Log("Slot " + slottedItem);
 	}
 }

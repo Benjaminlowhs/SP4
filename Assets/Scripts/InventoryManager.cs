@@ -30,14 +30,17 @@ public class InventoryManager : MonoBehaviour
     {
         Items.Remove(item);
     }
-
-    public void ListItems()
+    public void CleanItems()
     {
-
         foreach (Transform item in ItemContent)
         {
             Destroy(item.gameObject);
         }
+    }
+    public void ListItems()
+    {
+
+        CleanItems();
         foreach (var item in Items)
         {
             GameObject obj = Instantiate(InventoryItem, ItemContent);
