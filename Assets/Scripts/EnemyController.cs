@@ -12,6 +12,7 @@ public class EnemyController : MonoBehaviour
 
     public float health = 50f;
     public float speed = 1.5f;
+    private bool isMobilized;
     private Player player;
     //private bool isChasing = true;
 
@@ -55,11 +56,16 @@ public class EnemyController : MonoBehaviour
         {
             GetComponent<Animator>().SetTrigger("Attack");
             
+            isMobilized = false;
            
         }
 
     }
 
+    void ResetMobility()
+    {
+        isMobilized = true;    
+    }
 
     void OnDestroy()
     {
