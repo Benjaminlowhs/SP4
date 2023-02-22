@@ -110,19 +110,21 @@ public class CraftingManager : MonoBehaviour
 		{
 			Debug.Log(GetCraftedItem().itemName);
 			outputSlot.AddItem(GetCraftedItem());
+
+			if (GetCraftedItem().itemName == "Cure A")
+			{
+				Heli.SetActive(true);
+			}
+
+			if (GetCraftedItem().itemName == "Cure B")
+			{
+				Heli2.SetActive(true);
+			}
 		}
 
 
 
-		if (GetCraftedItem().itemName == "Cure A")
-		{
-			Heli.SetActive(true);
-		}
-
-		if (GetCraftedItem().itemName == "Cure B")
-		{
-			Heli2.SetActive(true);
-		}
+		
 	}
 
 

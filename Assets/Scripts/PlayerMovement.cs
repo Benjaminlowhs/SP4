@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;
+    public StaminaBar staminaBar;
 
     public float gravity = -19.62f;
     public float jumpHeight = 3f;
@@ -57,9 +58,11 @@ public class PlayerMovement : MonoBehaviour
 
         if (isRunning)
             currentStamina -= 20f * Time.deltaTime;
+            staminaBar.SetStamina(currentStamina);
 
         if (isRegenStamina)
             currentStamina += 8f * Time.deltaTime;
+            staminaBar.SetStamina(currentStamina);
 
         if (isRunning)
             controller.Move(move * defaultSpeed * runMultiplier * Time.deltaTime);
@@ -72,6 +75,7 @@ public class PlayerMovement : MonoBehaviour
         currentStamina = maxStamina;
 
         footstepSource = GetComponent<AudioSource>();
+        staminaBar.SetMaxStamina(maxStamina);
     }
 
     void Update()
