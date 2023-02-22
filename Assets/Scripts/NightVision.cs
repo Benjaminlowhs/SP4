@@ -9,6 +9,8 @@ public class NightVision : MonoBehaviour
     [SerializeField]
     Color boostedLightColor;
 
+    public BatteryHealthBar batteryhealthbar;
+
     bool isNightVisionEnabled;
     float nightVisionBattery;
 
@@ -41,6 +43,7 @@ public class NightVision : MonoBehaviour
         volume.weight = 0;
 
         nightVisionBattery = 100f;
+        batteryhealthbar.SetMaxBatteryHealth(nightVisionBattery);
     }
 
     void Update()
@@ -52,5 +55,6 @@ public class NightVision : MonoBehaviour
 
         if (isNightVisionEnabled)
             nightVisionBattery -= 0.3f * Time.deltaTime;
+            batteryhealthbar.SetBatteryHealth(nightVisionBattery);
     }
 }
