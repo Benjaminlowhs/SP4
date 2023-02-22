@@ -78,7 +78,8 @@ public class EnemyController : MonoBehaviour
 
     void Attack()
     {
-        player.TakeDamage(10);
+        if (Vector3.Distance(enemy.transform.position, target.position) < 3f)
+            player.TakeDamage(10);
         Debug.Log("Attackingg");
     }
 }
