@@ -11,6 +11,8 @@ public class PlayerActions : MonoBehaviour
     bool hasAssaultRifle;
     Camera m_camera;
 
+    int grenadeCount = 3;
+
     bool CheckAssaultRifle()
     {
         if (hasAssaultRifle)
@@ -41,7 +43,7 @@ public class PlayerActions : MonoBehaviour
 
     void Update()
     {
-        // hasAssaultRifle = CheckAssaultRifle();
+        hasAssaultRifle = CheckAssaultRifle();
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
@@ -58,9 +60,10 @@ public class PlayerActions : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.G))
+        if (Input.GetKeyDown(KeyCode.G) && grenadeCount > 0)
         {
             ThrowGrenade();
+            grenadeCount--;
         }
     }
 }
