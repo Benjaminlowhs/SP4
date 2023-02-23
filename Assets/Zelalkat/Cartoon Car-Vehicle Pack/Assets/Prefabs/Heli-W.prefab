@@ -208,7 +208,7 @@ GameObject:
   - component: {fileID: 3094198294814762829}
   - component: {fileID: 1712120802530170092}
   - component: {fileID: 9219476425328765084}
-  - component: {fileID: 2904266126236372558}
+  - component: {fileID: 6495051938513276655}
   m_Layer: 0
   m_Name: Heli-W
   m_TagString: Untagged
@@ -342,7 +342,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.33, y: 1, z: 2.3}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2904266126236372558
+--- !u!114 &6495051938513276655
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

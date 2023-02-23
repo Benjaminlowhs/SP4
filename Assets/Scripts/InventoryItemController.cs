@@ -9,10 +9,12 @@ public class InventoryItemController : MonoBehaviour
     public Button RemoveButton;
 	public Slot[] slots;
     public CraftingInteractable craftingInteractable;
+	public Player player;
 	private void Start()
 	{
 		slots = FindObjectsOfType<Slot>();
 		craftingInteractable = FindObjectOfType<CraftingInteractable>();
+		player = FindObjectOfType<Player>();
 	}
 
 	public void RemoveItem()
@@ -27,10 +29,10 @@ public class InventoryItemController : MonoBehaviour
         item = newitem;
     }
 
-    public void UseItem()
-    {
-        if (craftingInteractable.GetOpenStatus() == true)
-        {
+	public void UseItem()
+	{
+		if (craftingInteractable.GetOpenStatus() == true)
+		{
 			for (int i = 0; i < slots.Length; i++)
 			{
 				if (slots[3 - i].slottedItem == null)
@@ -40,6 +42,24 @@ public class InventoryItemController : MonoBehaviour
 					break;
 				}
 			}
+		}
+		if (item.id == 9 && player.currentHealth != player.maxHealth)
+		{
+			player.currentHealth += player.maxHealth/2;
+			if (player.currentHealth > player.maxHealth)
+			{
+				player.currentHealth = player.maxHealth;
+			}
+			RemoveItem();
+		}
+		if (item.id == 5 && player.currentHealth != player.maxHealth)
+		{
+			player.currentHealth += player.maxHealth / 10;
+			if (player.currentHealth > player.maxHealth)
+			{
+				player.currentHealth = player.maxHealth;
+			}
+			RemoveItem();
 		}
 	}
 }

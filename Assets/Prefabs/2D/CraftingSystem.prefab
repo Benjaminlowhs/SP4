@@ -509,7 +509,7 @@ MonoBehaviour:
   m_text: Clear
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a40fd03a02f644f47801e3a29f539498, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -3647130327181554669, guid: a40fd03a02f644f47801e3a29f539498, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -947,6 +947,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 42520a6e0cf33fb479c2165c43cd47a6, type: 2}
   - {fileID: 11400000, guid: b3ae648707b3059428ef2bf2a18ec0af, type: 2}
   - {fileID: 11400000, guid: 1f4e2a8d3b5a31447b1e10cfac8b54d0, type: 2}
+  Heli: {fileID: 0}
+  Heli2: {fileID: 0}
 --- !u!1 &8382058565645175665
 GameObject:
   m_ObjectHideFlags: 0
@@ -1009,7 +1011,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0.7843138, g: 0.7843138, b: 0.7843138, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1213,7 +1215,7 @@ MonoBehaviour:
   m_text: Craft
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a40fd03a02f644f47801e3a29f539498, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -3647130327181554669, guid: a40fd03a02f644f47801e3a29f539498, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
