@@ -39,6 +39,12 @@ public class BaseGun : MonoBehaviour
                 Instantiate(bloodSpray, hit.point, Quaternion.LookRotation(hit.normal));
                 enemy.TakeDamage(damage);
             }
+            RangedEnemyController rangedEnemy = hit.transform.GetComponent<RangedEnemyController>();
+            if (rangedEnemy != null)
+            {
+                Instantiate(bloodSpray, hit.point, Quaternion.LookRotation(hit.normal));
+                rangedEnemy.TakeDamage(damage);
+            }
 
         }
 
@@ -54,7 +60,6 @@ public class BaseGun : MonoBehaviour
     {
         if (fpsCamera == null)
             fpsCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>() as Camera;
-
         currentMagSize = magSize;
     }
 

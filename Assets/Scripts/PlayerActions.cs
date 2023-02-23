@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class PlayerActions : MonoBehaviour
 {
-    InventoryManager inventoryManager;
-    [SerializeField]
-    bool hasAssaultRifle;
-
     public GameObject assaultRifle, handgun;
+    public GameObject grenade;
+
+    InventoryManager inventoryManager;
+    bool hasAssaultRifle;
+    Camera m_camera;
 
     bool CheckAssaultRifle()
     {
@@ -24,14 +25,23 @@ public class PlayerActions : MonoBehaviour
         return false;
     }
 
+    void ThrowGrenade()
+    {
+        GameObject grenadeInstance = Instantiate(grenade, m_camera.transform.position + m_camera.transform.forward * 0.5f, gameObject.transform.rotation);
+        Vector3 throwForce = m_camera.transform.forward * 3f + transform.up * 0.5f;
+        grenadeInstance.GetComponent<Rigidbody>().AddForce(throwForce, ForceMode.Impulse);
+    }
+
     void Start()
     {
         inventoryManager = InventoryManager.Instance;
+
+        m_camera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
     }
 
     void Update()
     {
-        hasAssaultRifle = CheckAssaultRifle();
+        // hasAssaultRifle = CheckAssaultRifle();
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
@@ -46,6 +56,11 @@ public class PlayerActions : MonoBehaviour
                 assaultRifle.SetActive(true);
                 handgun.SetActive(false);
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            ThrowGrenade();
         }
     }
 }

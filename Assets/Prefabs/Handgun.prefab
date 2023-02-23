@@ -83,7 +83,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -5584,11 +5584,15 @@ MonoBehaviour:
   muzzleFlash: {fileID: 3474638440328194184}
   bloodSpray: {fileID: 70728814195497533, guid: 1c3b68db7e41a1d4b88ea347410ce9dc, type: 3}
   bangSound: {fileID: 8490767596954588520}
+  crosshair: {fileID: 0}
+  currentLoad: {fileID: 0}
+  totalLoad: {fileID: 0}
   damage: 40
   range: 100
   fireRate: 1
   magSize: 8
   reloadTime: 3
+  rotateSpeed: 6
 --- !u!1 &3474638441983072829
 GameObject:
   m_ObjectHideFlags: 0
