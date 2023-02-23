@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,7 +13,7 @@ public class InventoryItemController : MonoBehaviour
 	public Player player;
 	private void Start()
 	{
-		slots = FindObjectsOfType<Slot>();
+		slots = FindObjectsOfType<Slot>().OrderBy(slots => slots.index).ToArray();
 		craftingInteractable = FindObjectOfType<CraftingInteractable>();
 		player = FindObjectOfType<Player>();
 	}
@@ -31,13 +32,14 @@ public class InventoryItemController : MonoBehaviour
 
 	public void UseItem()
 	{
+	
 		if (craftingInteractable.GetOpenStatus() == true)
 		{
 			for (int i = 0; i < slots.Length; i++)
 			{
-				if (slots[3 - i].slottedItem == null)
+				if (slots[i].slottedItem == null)
 				{
-					slots[3 - i].AddItem(item);
+					slots[i].AddItem(item);
 					RemoveItem();
 					break;
 				}

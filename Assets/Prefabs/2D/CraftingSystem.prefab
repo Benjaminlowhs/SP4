@@ -90,6 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slottedItem: {fileID: 0}
+  index: 2
   emptySprite: {fileID: 21300000, guid: 6746896c56199db4099ce7522f96fdb0, type: 3}
 --- !u!1 &1241017811826690472
 GameObject:
@@ -305,6 +306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slottedItem: {fileID: 0}
+  index: 1
   emptySprite: {fileID: 21300000, guid: 6746896c56199db4099ce7522f96fdb0, type: 3}
 --- !u!1 &2566408660050927804
 GameObject:
@@ -665,6 +667,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slottedItem: {fileID: 0}
+  index: 0
   emptySprite: {fileID: 21300000, guid: 6746896c56199db4099ce7522f96fdb0, type: 3}
 --- !u!1 &4984132108235046862
 GameObject:
@@ -756,6 +759,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slottedItem: {fileID: 0}
+  index: 3
   emptySprite: {fileID: 21300000, guid: 6746896c56199db4099ce7522f96fdb0, type: 3}
 --- !u!1 &7385594964577421081
 GameObject:

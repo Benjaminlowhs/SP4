@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class Slot : MonoBehaviour
 {
 	public Item slottedItem;
+	public int index;
 
 	public Sprite emptySprite;
 	private void Update()
