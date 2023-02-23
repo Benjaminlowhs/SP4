@@ -24,12 +24,12 @@ public class CraftingInteractable : MonoBehaviour, IInteractable
 	{
 		Inventory.SetActive(true);
 		craftingPanel.SetActive(true);
-		Time.timeScale = 0.0f;
 		interactText = "Press 'E' to Exit";
 		Cursor.visible = true;
 		isOpen = true;
 		InventoryList.GetComponent<InventoryManager>().ListItems();
 		Cursor.lockState = CursorLockMode.None;
+		Time.timeScale = 0.0f;
 	}
 
 	public void HidePanel()
@@ -37,12 +37,11 @@ public class CraftingInteractable : MonoBehaviour, IInteractable
 		Inventory.SetActive(false);
 		InventoryManager.Instance.CleanItems();
 		craftingPanel.SetActive(false);
-		Time.timeScale = 1.0f;
 		interactText = "Press 'E' to Craft";
 		Cursor.visible = false;
 		isOpen = false;
 		Cursor.lockState = CursorLockMode.Locked;
-
+		Time.timeScale = 1.0f;
 	}
 	public void Interact(Transform interactorTransform)
 	{

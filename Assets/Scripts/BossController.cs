@@ -14,6 +14,8 @@ public class BossController : MonoBehaviour
     public float speed = 1.0f;
     private bool isMobilized;
     private Player player;
+    float damageTick = 2f;
+    float currentTime = 0f;
     //private bool isChasing = true;
 
     public void TakeDamage(float damage)
@@ -46,7 +48,7 @@ public class BossController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-
+        currentTime += 2f * Time.deltaTime;
         enemy.SetDestination(target.position);
         GetComponent<Animator>().ResetTrigger("Attack");
         //enemy.transform.rotation = Quaternion.LookRotation(Vector3.forward, target.position);
@@ -59,7 +61,11 @@ public class BossController : MonoBehaviour
             isMobilized = false;
            
         }
-
+        if (currentTime >= damageTick)
+        {
+            CheckForPlayer();
+            currentTime = 0f;
+        }
     }
 
     void ResetMobility()
@@ -81,5 +87,17 @@ public class BossController : MonoBehaviour
         if (Vector3.Distance(enemy.transform.position, target.position) < 3f)
             player.TakeDamage(10);
         Debug.Log("Attackingg");
+    }
+
+    void CheckForPlayer()
+    {
+        Collider[] collider = Physics.OverlapSphere(transform.position, 6f);
+        foreach (Collider c in collider)
+        {
+            if (c.GetComponent<Player>())
+            {
+                c.GetComponent<Player>().TakeDamage(2);
+            }
+        }
     }
 }
