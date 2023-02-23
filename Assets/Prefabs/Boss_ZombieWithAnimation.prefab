@@ -268,8 +268,8 @@ GameObject:
   - component: {fileID: 5787350224273967469}
   - component: {fileID: 5727280009719810296}
   - component: {fileID: 1240901379783674653}
-  - component: {fileID: 7184863035841399323}
   - component: {fileID: 6432788232684345087}
+  - component: {fileID: 6322405580196635925}
   m_Layer: 0
   m_Name: Boss_ZombieWithAnimation
   m_TagString: Untagged
@@ -344,21 +344,6 @@ CapsuleCollider:
   m_Height: 3.14
   m_Direction: 1
   m_Center: {x: 0, y: 1.44, z: 0}
---- !u!114 &7184863035841399323
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5787350224266721973}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6f716827af647344ae4efff5e75e3e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemy: {fileID: 6432788232684345087}
-  health: 50
-  speed: 1.5
 --- !u!195 &6432788232684345087
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -381,6 +366,21 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &6322405580196635925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5787350224266721973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a5a2f5d29811fb43b24f43ec1d40724, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 6432788232684345087}
+  health: 50
+  speed: 1.5
 --- !u!1 &5787350224266721975
 GameObject:
   m_ObjectHideFlags: 0
@@ -433,7 +433,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 95d102aedfd5f58489ef4b35f8c01423, type: 2}
+  - {fileID: 2100000, guid: 0f2dbbd36d4a2544986bc121c8b9fc93, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
