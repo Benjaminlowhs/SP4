@@ -136,7 +136,7 @@ public class Spawner : MonoBehaviour
 
     void Update()
     {
-        if (currWave >= 2)
+        if (currWave >= 10)
         {
             Block.SetActive(false);
         }
