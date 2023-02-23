@@ -6,11 +6,13 @@ public class EnemyProjectile : MonoBehaviour
 {
     private Player player;
     public GameObject puke;
+    private float pukeTimer;
 
 
     private void Awake()
     {
         player = FindObjectOfType<Player>();
+        pukeTimer = 5;
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -19,5 +21,10 @@ public class EnemyProjectile : MonoBehaviour
             player.TakeDamage(20);
             Destroy(puke);
         }
+    }
+
+    private void Update()
+    {
+        Destroy(puke, pukeTimer);
     }
 }

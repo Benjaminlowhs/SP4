@@ -18,9 +18,12 @@ public class Spawner : MonoBehaviour
     private float waveTimer;
     private float spawnInterval;
     private float spawnTimer;
+    private float waveTextTimer;
+    private bool waveSpawned;
     public GameObject Block;
     public TMP_Text waveCounterText;
     public TMP_Text zombieCounterText;
+    public GameObject waveSpawnText;
 
 
 
@@ -29,6 +32,7 @@ public class Spawner : MonoBehaviour
     void Start()
     {
         GenerateWave();
+        waveSpawned = true;
         
     }
 
@@ -62,7 +66,7 @@ public class Spawner : MonoBehaviour
         else
         {
             spawnTimer -= Time.fixedDeltaTime;
-            
+
         }
 
         if (spawnedEnemies.Count <= 0)
@@ -85,6 +89,18 @@ public class Spawner : MonoBehaviour
             zombieCounterText.text = "Zombies left: " + (spawnedEnemies.Count + enemiesToSpawn.Count);
         }
 
+        if (waveSpawned)
+        {
+            waveSpawnText.SetActive(true);
+            waveTextTimer+= 1* Time.deltaTime;
+            if (waveTextTimer > 5)
+            {
+                waveSpawned = false;
+                waveSpawnText.SetActive(false);
+                waveTextTimer = 0;
+            }
+        }
+
         waveCounterText.text = ToRoman(currWave);
     }
 
@@ -97,7 +113,7 @@ public class Spawner : MonoBehaviour
     {
         waveValue = currWave * 10;
         GenerateEnemies();
-
+        waveSpawned = true;
         spawnInterval = 5; // gives a fixed time between each enemies
         waveTimer = waveDuration; // wave duration is read only
     }
