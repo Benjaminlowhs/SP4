@@ -43,7 +43,7 @@ public class InventoryItemController : MonoBehaviour
 				}
 			}
 		}
-		if (item.id == 9)
+		if (item.id == 9 && player.currentHealth != player.maxHealth)
 		{
 			player.currentHealth += 20;
 			if (player.currentHealth > player.maxHealth)
