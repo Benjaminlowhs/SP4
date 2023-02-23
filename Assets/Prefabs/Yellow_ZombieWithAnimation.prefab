@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3315699727977104693
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 432889003011985287}
+  m_Layer: 0
+  m_Name: ProjectilePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &432889003011985287
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3315699727977104693}
+  m_LocalRotation: {x: -0, y: -0.007430922, z: -0, w: 0.9999724}
+  m_LocalPosition: {x: 0, y: 1.27, z: 0.512}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5787350224267011733}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: -0.852, z: 0}
 --- !u!1 &5787350224266721953
 GameObject:
   m_ObjectHideFlags: 0
@@ -268,8 +299,8 @@ GameObject:
   - component: {fileID: 5787350224273967469}
   - component: {fileID: 5727280009719810296}
   - component: {fileID: 1240901379783674653}
-  - component: {fileID: 7184863035841399323}
   - component: {fileID: 6432788232684345087}
+  - component: {fileID: 1007142946408641375}
   m_Layer: 0
   m_Name: Yellow_ZombieWithAnimation
   m_TagString: Untagged
@@ -291,6 +322,7 @@ Transform:
   m_Children:
   - {fileID: 5787350224267011735}
   - {fileID: 5787350224267011745}
+  - {fileID: 432889003011985287}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -344,22 +376,6 @@ CapsuleCollider:
   m_Height: 3.14
   m_Direction: 1
   m_Center: {x: 0, y: 1.44, z: 0}
---- !u!114 &7184863035841399323
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5787350224266721973}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6f716827af647344ae4efff5e75e3e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemy: {fileID: 6432788232684345087}
-  health: 50
-  speed: 1.5
-  player: {fileID: 6206763173177331872, guid: ad6172fd45db59747bd4e0e041191cbf, type: 3}
 --- !u!195 &6432788232684345087
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -382,6 +398,24 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1007142946408641375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5787350224266721973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ba722db529e55049a5b33a5b24b975e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 6432788232684345087}
+  projectile: {fileID: 6914573840199511096, guid: 9c75fea848efbd842a197958740e9954, type: 3}
+  spawnPoint: {fileID: 432889003011985287}
+  health: 50
+  speed: 1.5
+  bulletSpeed: 10
 --- !u!1 &5787350224266721975
 GameObject:
   m_ObjectHideFlags: 0
