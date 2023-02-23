@@ -10,8 +10,8 @@ public class BossController : MonoBehaviour
 
     Animator animator;
 
-    public float health = 50f;
-    public float speed = 1.5f;
+    public float health = 100f;
+    public float speed = 1.0f;
     private bool isMobilized;
     private Player player;
     //private bool isChasing = true;
