@@ -8356,7 +8356,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -2.4002686, y: 115.20004}
+  m_AnchoredPosition: {x: -2.4001465, y: 115.20007}
   m_SizeDelta: {x: 73.7292, y: 39.1146}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &927509066
@@ -9255,7 +9255,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 31.079956, y: -112.46405}
+  m_AnchoredPosition: {x: 31.080078, y: -112.46405}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &956104544
@@ -10100,7 +10100,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1115134687
 Transform:
   m_ObjectHideFlags: 0
@@ -12862,7 +12862,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 45.119873, y: 203.04001}
+  m_AnchoredPosition: {x: 45.119873, y: 203.04004}
   m_SizeDelta: {x: 66.2, y: 42.5112}
   m_Pivot: {x: 0, y: 0}
 --- !u!1 &1462063035
@@ -13610,7 +13610,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -2.4000244, y: 12}
+  m_AnchoredPosition: {x: -2.4001465, y: 12}
   m_SizeDelta: {x: 73.7292, y: 39.1146}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &1516962154
@@ -13747,7 +13747,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh528660
+  m_Name: pb_Mesh136916
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -14365,6 +14365,10 @@ PrefabInstance:
       propertyPath: currentLoad
       value: 
       objectReference: {fileID: 927509066}
+    - target: {fileID: 3898039268110082392, guid: ad6172fd45db59747bd4e0e041191cbf, type: 3}
+      propertyPath: grenade
+      value: 
+      objectReference: {fileID: 1688602984149662322, guid: 42a4e91f7e1fbe94788e90a60088ff69, type: 3}
     - target: {fileID: 6157703364037618491, guid: ad6172fd45db59747bd4e0e041191cbf, type: 3}
       propertyPath: crosshair
       value: 
@@ -14953,7 +14957,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh528774
+  m_Name: pb_Mesh137028
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

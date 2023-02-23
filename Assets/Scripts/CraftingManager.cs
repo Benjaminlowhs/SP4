@@ -11,12 +11,13 @@ public class CraftingManager : MonoBehaviour
 	[SerializeField]private List<Recipe> recipeList;
 	public GameObject Heli;
 	public GameObject Heli2;
+	public GameObject Door;
 
 	private void Start()
     {
 		Heli.SetActive(false);
 		Heli2.SetActive(false);
-
+		Door.SetActive(true);
 	}
 
 	public bool IsEmpty(int i)
@@ -113,11 +114,13 @@ public class CraftingManager : MonoBehaviour
 
 			if (GetCraftedItem().itemName == "Cure A")
 			{
+				Door.SetActive(false);
 				Heli.SetActive(true);
 			}
 
 			if (GetCraftedItem().itemName == "Cure B")
 			{
+				Door.SetActive(false);
 				Heli2.SetActive(true);
 			}
 		}
