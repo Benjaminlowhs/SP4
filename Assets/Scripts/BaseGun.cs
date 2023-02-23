@@ -45,7 +45,12 @@ public class BaseGun : MonoBehaviour
                 Instantiate(bloodSpray, hit.point, Quaternion.LookRotation(hit.normal));
                 rangedEnemy.TakeDamage(damage);
             }
-
+            BossController bossEnemy = hit.transform.GetComponent<BossController>();
+            if (bossEnemy != null)
+            {
+                Instantiate(bloodSpray, hit.point, Quaternion.LookRotation(hit.normal));
+                bossEnemy.TakeDamage(damage);
+            }
         }
 
     }
