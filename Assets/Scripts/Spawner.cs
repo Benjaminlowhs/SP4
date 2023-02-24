@@ -69,12 +69,12 @@ public class Spawner : MonoBehaviour
 
         }
 
-        if (spawnedEnemies.Count <= 0)
+        if (spawnedEnemies.Count + enemiesToSpawn.Count <= 5)
         {
             waveTimer -= Time.fixedDeltaTime;
         }
-
-        if (waveTimer <= 0 && spawnedEnemies.Count <= 0)
+        
+        if (waveTimer <= 0 && spawnedEnemies.Count + enemiesToSpawn.Count  <= 5)
         {
             currWave++;
             GenerateWave();
