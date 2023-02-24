@@ -5587,11 +5587,11 @@ MonoBehaviour:
   crosshair: {fileID: 0}
   currentLoad: {fileID: 0}
   totalLoad: {fileID: 0}
-  damage: 40
-  range: 100
-  fireRate: 1
-  magSize: 8
-  reloadTime: 3
+  damage: 10
+  range: 30
+  fireRate: 2
+  magSize: 10
+  reloadTime: 2
   rotateSpeed: 6
 --- !u!1 &3474638441983072829
 GameObject:

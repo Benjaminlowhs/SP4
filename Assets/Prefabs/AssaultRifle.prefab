@@ -76,9 +76,9 @@ MonoBehaviour:
   currentLoad: {fileID: 0}
   totalLoad: {fileID: 0}
   damage: 20
-  range: 80
-  fireRate: 10
-  magSize: 20
+  range: 50
+  fireRate: 8
+  magSize: 25
   reloadTime: 3
   rotateSpeed: 6
 --- !u!1 &104236210234593950
