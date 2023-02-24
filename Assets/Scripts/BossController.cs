@@ -54,18 +54,30 @@ public class BossController : MonoBehaviour
         //enemy.transform.rotation = Quaternion.LookRotation(Vector3.forward, target.position);
         //enemy.transform.position = Vector3.MoveTowards(enemy.transform.position, target.position, speed * Time.deltaTime);
 
-        if (Vector3.Distance(enemy.transform.position, target.position) < 3f)
+        RaycastHit hit;
+        var rayDirection = player.transform.position - transform.position;
+        if (Physics.Raycast(transform.position, rayDirection, out hit, 10f))
         {
-            GetComponent<Animator>().SetTrigger("Attack");
-            
-            isMobilized = false;
-           
+            Debug.Log("Hit");
+            if (hit.collider.gameObject.CompareTag("Player"))
+            {
+                if (Vector3.Distance(enemy.transform.position, target.position) < 3f)
+                {
+                    GetComponent<Animator>().SetTrigger("Attack");
+
+                    isMobilized = false;
+
+
+                } 
+                if (currentTime >= damageTick)
+                {
+
+                     CheckForPlayer();
+                     currentTime = 0f;
+                }
+            }
         }
-        if (currentTime >= damageTick)
-        {
-            CheckForPlayer();
-            currentTime = 0f;
-        }
+
     }
 
     void ResetMobility()
@@ -85,7 +97,7 @@ public class BossController : MonoBehaviour
     void Attack()
     {
         if (Vector3.Distance(enemy.transform.position, target.position) < 3f)
-            player.TakeDamage(10);
+            player.TakeDamage(20);
         Debug.Log("Attackingg");
     }
 

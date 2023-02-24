@@ -47,12 +47,12 @@ public class InventoryItemController : MonoBehaviour
 		}
 		if (item.id == 9 && player.currentHealth != player.maxHealth)
 		{
-			player.Heal(50);
+			player.Heal(player.maxHealth/2);
 			RemoveItem();
 		}
 		if (item.id == 5 && player.currentHealth != player.maxHealth)
 		{
-			player.Heal(10);
+			player.Heal(player.maxHealth/10);
 			RemoveItem();
 		}
 	}
