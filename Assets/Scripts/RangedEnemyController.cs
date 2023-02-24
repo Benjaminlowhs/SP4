@@ -9,6 +9,8 @@ public class RangedEnemyController : MonoBehaviour
     private Transform target;
     public GameObject projectile;
     public Transform spawnPoint;
+    public AudioSource attackAudio;
+    public AudioSource diedAudio;
 
     Animator animator;
 
@@ -26,6 +28,7 @@ public class RangedEnemyController : MonoBehaviour
         health -= damage;
         if (health <= 0f)
         {
+            diedAudio.Play();
             Die();
         }
     }
@@ -61,7 +64,6 @@ public class RangedEnemyController : MonoBehaviour
         var rayDirection = player.transform.position - transform.position;
         if (Physics.Raycast(transform.position, rayDirection, out hit, range))
         {
-            Debug.Log("Hit");
             if (hit.collider.gameObject.CompareTag("Player"))
             {
                 if (Vector3.Distance(enemy.transform.position, target.position) < 10f)
@@ -92,11 +94,13 @@ public class RangedEnemyController : MonoBehaviour
     }
 
     void Attack()
-    {
+    {        
+        attackAudio.Play();
         if (Vector3.Distance(enemy.transform.position, target.position) < 3f)
             player.TakeDamage(10);
         GameObject spitObj = Instantiate(projectile, spawnPoint.position, spawnPoint.rotation);
         spitObj.GetComponent<Rigidbody>().velocity = spawnPoint.forward * bulletSpeed;
-        Debug.Log("Attackingg");
+
+
     }
 }

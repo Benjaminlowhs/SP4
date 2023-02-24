@@ -7,7 +7,8 @@ public class BossController : MonoBehaviour
 {
     public NavMeshAgent enemy;
     private Transform target;
-
+    public AudioSource attackAudio;
+    public AudioSource diedAudio;
     Animator animator;
 
     public float health = 100f;
@@ -23,6 +24,7 @@ public class BossController : MonoBehaviour
         health -= damage;
         if (health <= 0f)
         {
+            diedAudio.Play();
             Die();
         }
     }
@@ -58,12 +60,12 @@ public class BossController : MonoBehaviour
         var rayDirection = player.transform.position - transform.position;
         if (Physics.Raycast(transform.position, rayDirection, out hit, 10f))
         {
-            Debug.Log("Hit");
             if (hit.collider.gameObject.CompareTag("Player"))
             {
                 if (Vector3.Distance(enemy.transform.position, target.position) < 3f)
                 {
                     GetComponent<Animator>().SetTrigger("Attack");
+
 
                     isMobilized = false;
 
@@ -95,10 +97,12 @@ public class BossController : MonoBehaviour
     }
 
     void Attack()
-    {
+    {       
+        attackAudio.Play();
         if (Vector3.Distance(enemy.transform.position, target.position) < 3f)
             player.TakeDamage(20);
-        Debug.Log("Attackingg");
+
+
     }
 
     void CheckForPlayer()

@@ -7,6 +7,8 @@ public class EnemyController : MonoBehaviour
 {
     public NavMeshAgent enemy;
     private Transform target;
+    public AudioSource attackAudio;
+    public AudioSource diedAudio;
 
     Animator animator;
 
@@ -21,6 +23,7 @@ public class EnemyController : MonoBehaviour
         health -= damage;
         if (health <= 0f)
         {
+            diedAudio.Play();
             Die();
         }
     }
@@ -55,7 +58,8 @@ public class EnemyController : MonoBehaviour
         if (Vector3.Distance(enemy.transform.position, target.position) < 3f)
         {
             GetComponent<Animator>().SetTrigger("Attack");
-            
+
+
             isMobilized = false;
            
         }
@@ -77,9 +81,11 @@ public class EnemyController : MonoBehaviour
     }
 
     void Attack()
-    {
+    {        
+        attackAudio.Play();
         if (Vector3.Distance(enemy.transform.position, target.position) < 3f)
             player.TakeDamage(10);
-        Debug.Log("Attackingg");
+
+
     }
 }
