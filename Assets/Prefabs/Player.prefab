@@ -89,6 +89,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 1163585400488887594}
+  staminaBar: {fileID: 0}
   gravity: -19.62
   jumpHeight: 3
   groundCheck: {fileID: 1163585401144670538}
@@ -221,9 +222,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63ad4d24a781caa4e9ea048f16d72d24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasAssaultRifle: 0
   assaultRifle: {fileID: 4695213516054574661}
   handgun: {fileID: 1891033434202995687}
+  grenade: {fileID: 0}
 --- !u!1 &1163585401144670539
 GameObject:
   m_ObjectHideFlags: 0
