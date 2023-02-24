@@ -10,6 +10,7 @@ public class Slot : MonoBehaviour
 	public int index;
 
 	public Sprite emptySprite;
+	public AudioSource addaudio;
 	private void Update()
 	{
 		if (slottedItem != null)
@@ -34,7 +35,7 @@ public class Slot : MonoBehaviour
 	}
 	public void AddItem(Item item)
 	{
+		addaudio.Play();
 		slottedItem = item;
-		Debug.Log("Slot " + slottedItem);
 	}
 }

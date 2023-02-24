@@ -11,6 +11,8 @@ public class InventoryItemController : MonoBehaviour
 	public Slot[] slots;
     public CraftingInteractable craftingInteractable;
 	public Player player;
+
+
 	private void Start()
 	{
 		slots = FindObjectsOfType<Slot>().OrderBy(slots => slots.index).ToArray();

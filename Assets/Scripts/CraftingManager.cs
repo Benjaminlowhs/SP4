@@ -9,6 +9,9 @@ public class CraftingManager : MonoBehaviour
 	[SerializeField] private ResultSlot outputSlot;
 	public Item craftedItem;
 	[SerializeField]private List<Recipe> recipeList;
+
+	public AudioSource clearAudio;
+	public AudioSource craftAudio;
 	
 
 	public bool IsEmpty(int i)
@@ -69,6 +72,7 @@ public class CraftingManager : MonoBehaviour
 	{
 		if (GetCraftedItem() != null)
 		{
+			craftAudio.Play();
 			InventoryManager.Instance.Add(GetCraftedItem());
 			Debug.Log("Item added to Inventory");
 			Debug.Log(GetCraftedItem());
@@ -87,6 +91,7 @@ public class CraftingManager : MonoBehaviour
 		{
 			if (craftingSlots[i].slottedItem != null)
 			{
+				clearAudio.Play();
 				InventoryManager.Instance.Add(craftingSlots[i].slottedItem);
 				craftingSlots[i].slottedItem = null;
 			}
