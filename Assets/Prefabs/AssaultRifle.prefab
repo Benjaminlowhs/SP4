@@ -72,6 +72,7 @@ MonoBehaviour:
   muzzleFlash: {fileID: 2441405208182746100}
   bloodSpray: {fileID: 70728814195497533, guid: 1c3b68db7e41a1d4b88ea347410ce9dc, type: 3}
   bangSound: {fileID: 6365710000052649613}
+  reloadingSound: {fileID: 0}
   crosshair: {fileID: 0}
   currentLoad: {fileID: 0}
   totalLoad: {fileID: 0}
@@ -5497,7 +5498,7 @@ AudioSource:
   m_GameObject: {fileID: 7791879872777078127}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 8627566610776204887, guid: 127093c56b3637f42bcc0f684ee5e478, type: 2}
   m_audioClip: {fileID: 8300000, guid: ea4ce22c06989cf48bbb20eeb569cb72, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1

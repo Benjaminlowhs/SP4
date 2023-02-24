@@ -16,9 +16,14 @@ public class SettingsPage : MonoBehaviour
     {
         
     }
-    public void SetVolume (float volume)
+    public void SetSfxVolume (float volume)
     {
-        audioMixer.SetFloat("volume", volume);
+        audioMixer.SetFloat("sfx", volume);
+    }
+
+    public void SetMusicVolume(float volume)
+    {
+        audioMixer.SetFloat("music", volume);
     }
 
     public void SetQuality (int qualityIndex)
