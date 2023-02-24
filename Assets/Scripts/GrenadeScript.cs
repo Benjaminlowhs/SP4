@@ -8,6 +8,7 @@ public class GrenadeScript : MonoBehaviour
 
     float timer = 0f;
     float timeToExplode = 2f;
+    float damage = 50f;
     float range = 5f;
 
     void Explode()
@@ -25,10 +26,25 @@ public class GrenadeScript : MonoBehaviour
         foreach(Collider target in targetsHit)
         {
             EnemyController enemy = target.GetComponent<EnemyController>();
-            if (enemy == null)
+            if (enemy != null)
+            {
+                enemy.TakeDamage(damage);
                 continue;
+            }
 
-            enemy.TakeDamage(500);
+            RangedEnemyController rangedEnemy = target.GetComponent<RangedEnemyController>();
+            if (rangedEnemy != null)
+            {
+                rangedEnemy.TakeDamage(damage); 
+                continue;
+            }
+
+            BossController bossEnemy = target.GetComponent<BossController>();
+            if (bossEnemy != null)
+            {
+                bossEnemy.TakeDamage(damage);
+                continue;
+            }            
         }
     }
 

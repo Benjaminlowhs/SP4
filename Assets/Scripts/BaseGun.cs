@@ -6,6 +6,7 @@ public class BaseGun : MonoBehaviour
     public ParticleSystem muzzleFlash;
     public GameObject bloodSpray;
     public AudioSource bangSound;
+    public AudioSource reloadingSound;
     public GameObject crosshair;
     public TMP_Text currentLoad;
     public TMP_Text totalLoad;
@@ -57,6 +58,8 @@ public class BaseGun : MonoBehaviour
 
     void Reload()
     {
+        reloadingSound.Play();
+
         isReloading = true;
         currentMagSize = magSize;
     }
@@ -70,10 +73,11 @@ public class BaseGun : MonoBehaviour
 
     void Update()
     {
+        currentLoad.text = currentMagSize.ToString();
+        totalLoad.text = magSize.ToString();
 
         if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire && currentMagSize > 0 && !isReloading)
         {
-
             Shoot();
             nextTimeToFire = Time.time + 1f/fireRate;
             currentMagSize -= 1;
@@ -87,8 +91,13 @@ public class BaseGun : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R) && Time.time >= nextTimeReloadFinish)
         {
+            if (isReloading)
+                return;
+
+            if (currentMagSize >= magSize)
+                return;
+
             Reload();
-            
             nextTimeReloadFinish = Time.time + reloadTime;
         }
 
@@ -96,9 +105,5 @@ public class BaseGun : MonoBehaviour
         {
             crosshair.transform.Rotate(0,0,rotateSpeed);
         }
-
-        
-        currentLoad.text = currentMagSize.ToString();
-        totalLoad.text = magSize.ToString();
     }
 }
