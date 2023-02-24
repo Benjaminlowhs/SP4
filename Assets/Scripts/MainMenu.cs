@@ -22,6 +22,11 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("MainGameScene");
     }
 
+    public void Help()
+    {
+        SceneManager.LoadScene("Help");
+    }
+
     public void LoadMenu()
     {
         SceneManager.LoadScene("MainMenu");
