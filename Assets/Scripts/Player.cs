@@ -53,6 +53,17 @@ public class Player : MonoBehaviour
         bloodScreenCounter = 5;
     }
 
+    public void Heal(int healValue)
+    {
+        Debug.Log("Heal");
+        currentHealth += healValue;
+        if (currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+        healthBar.SetHealth(currentHealth);
+    }
+
     private void Death()
     {
         if(currentHealth<=0)
