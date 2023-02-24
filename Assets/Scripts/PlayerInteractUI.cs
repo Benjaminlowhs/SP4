@@ -25,7 +25,7 @@ public class PlayerInteractUI : MonoBehaviour
 		interactTextMeshProGUI.text = interactable.GetInteractText();
 	}
 
-	private void Hide()
+	public void Hide()
 	{
 		containerGameObject.SetActive(false);
 	}

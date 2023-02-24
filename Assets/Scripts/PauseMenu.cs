@@ -11,19 +11,44 @@ public class PauseMenu : MonoBehaviour
     public GameObject crosshair;
 
     public GameObject bgmController;
+    public GameObject CraftingPanel;
+    public GameObject optionsMenuUI;
+    public GameObject inventoryUI;
+    
+
+    public PlayerInteractUI playerInteract;
+    public CraftingInteractable craftingInteract;
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (GameIsPaused)
+            if (!CraftingPanel.activeSelf)
             {
-                Resume();
+                if (!optionsMenuUI.activeSelf)
+                {
+                    if (GameIsPaused)
+                    {
+                        Resume();
+                    }
+                    else
+                    {
+                        Pause();
+                    }
+                }
+                else
+                {
+                    pauseMenuUI.SetActive(true);
+                    optionsMenuUI.SetActive(false);
+                }
             }
             else
             {
-                Pause();
+                playerInteract.Hide();
+                inventoryUI.SetActive(false);
+                CraftingPanel.SetActive(false);
+                craftingInteract.HidePanel();
             }
         }
     }
