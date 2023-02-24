@@ -5143,6 +5143,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1712120802530170092, guid: 77e5368bfcaad844ea877d3879c90bb9, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 8627566610776204887, guid: 127093c56b3637f42bcc0f684ee5e478, type: 2}
     - target: {fileID: 2065908872381158750, guid: 77e5368bfcaad844ea877d3879c90bb9, type: 3}
       propertyPath: m_Name
       value: Heli-W
@@ -5207,6 +5211,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4208055833715002249, guid: 77e5368bfcaad844ea877d3879c90bb9, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 8627566610776204887, guid: 127093c56b3637f42bcc0f684ee5e478, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77e5368bfcaad844ea877d3879c90bb9, type: 3}
 --- !u!1001 &610542093
@@ -5976,7 +5984,7 @@ AudioSource:
   m_GameObject: {fileID: 730800914}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 327387957102792386, guid: 127093c56b3637f42bcc0f684ee5e478, type: 2}
   m_audioClip: {fileID: 8300000, guid: e0421d45edab28f408a6d271fc278f1a, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.5
@@ -9422,7 +9430,7 @@ AudioSource:
   m_GameObject: {fileID: 1118719222}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 8627566610776204887, guid: 127093c56b3637f42bcc0f684ee5e478, type: 2}
   m_audioClip: {fileID: 8300000, guid: 9eadee6ba0f502242b42c3fd25d6bd5f, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -9636,6 +9644,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 881849537}
     m_Modifications:
+    - target: {fileID: 325993979417710975, guid: 11eeae0f258fd384ea0ce8cc804fb791, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 8627566610776204887, guid: 127093c56b3637f42bcc0f684ee5e478, type: 2}
     - target: {fileID: 1241017811826690472, guid: 11eeae0f258fd384ea0ce8cc804fb791, type: 3}
       propertyPath: m_Name
       value: CraftingSystem
@@ -9668,6 +9680,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 397
       objectReference: {fileID: 0}
+    - target: {fileID: 5937169424376289375, guid: 11eeae0f258fd384ea0ce8cc804fb791, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 8627566610776204887, guid: 127093c56b3637f42bcc0f684ee5e478, type: 2}
+    - target: {fileID: 6302271110171184409, guid: 11eeae0f258fd384ea0ce8cc804fb791, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 8627566610776204887, guid: 127093c56b3637f42bcc0f684ee5e478, type: 2}
     - target: {fileID: 6705209276306422426, guid: 11eeae0f258fd384ea0ce8cc804fb791, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -10511,13 +10531,25 @@ MonoBehaviour:
   m_FillRect: {fileID: 379474107}
   m_HandleRect: {fileID: 1006372259}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: -80
+  m_MaxValue: 0
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1189742517}
+        m_TargetAssemblyTypeName: SettingsPage, Assembly-CSharp
+        m_MethodName: SetMusicVolume
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1248090204
 GameObject:
   m_ObjectHideFlags: 0
@@ -10779,6 +10811,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1712120802530170092, guid: 2e5c99d908fe3d841b99e2d8dc47a709, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 8627566610776204887, guid: 127093c56b3637f42bcc0f684ee5e478, type: 2}
     - target: {fileID: 2065908872381158750, guid: 2e5c99d908fe3d841b99e2d8dc47a709, type: 3}
       propertyPath: m_Name
       value: Heli-L
@@ -10791,6 +10827,10 @@ PrefabInstance:
       propertyPath: MaxDistance
       value: 500
       objectReference: {fileID: 0}
+    - target: {fileID: 2462083185238551938, guid: 2e5c99d908fe3d841b99e2d8dc47a709, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 8627566610776204887, guid: 127093c56b3637f42bcc0f684ee5e478, type: 2}
     - target: {fileID: 3094198294814762829, guid: 2e5c99d908fe3d841b99e2d8dc47a709, type: 3}
       propertyPath: m_RootOrder
       value: 21
@@ -14013,6 +14053,10 @@ PrefabInstance:
       propertyPath: reloadingSound
       value: 
       objectReference: {fileID: 1118719226}
+    - target: {fileID: 3766818605753905887, guid: ad6172fd45db59747bd4e0e041191cbf, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 8627566610776204887, guid: 127093c56b3637f42bcc0f684ee5e478, type: 2}
     - target: {fileID: 3898039268110082392, guid: ad6172fd45db59747bd4e0e041191cbf, type: 3}
       propertyPath: Door
       value: 
@@ -15266,13 +15310,25 @@ MonoBehaviour:
   m_FillRect: {fileID: 991639531}
   m_HandleRect: {fileID: 2137882398}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: -80
+  m_MaxValue: 0
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1189742517}
+        m_TargetAssemblyTypeName: SettingsPage, Assembly-CSharp
+        m_MethodName: SetSfxVolume
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1808078085
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15682,7 +15738,7 @@ AudioSource:
   m_GameObject: {fileID: 1887334926}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 8627566610776204887, guid: 127093c56b3637f42bcc0f684ee5e478, type: 2}
   m_audioClip: {fileID: 8300000, guid: 9eadee6ba0f502242b42c3fd25d6bd5f, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
