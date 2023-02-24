@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerActions : MonoBehaviour
 {
     public GameObject assaultRifle, handgun;
     public GameObject grenade;
     public GameObject HeliW, HeliL, Door;
+    public TMP_Text GrenadeCounter;
     InventoryManager inventoryManager;
     bool hasAssaultRifle;
     Camera m_camera;
@@ -101,6 +103,11 @@ public class PlayerActions : MonoBehaviour
         if(EndGame()==true)
         {
             EndGame();
+        }
+
+        if (grenadeCount >= 0)
+        {
+            GrenadeCounter.text = grenadeCount.ToString();
         }
     }
 }
