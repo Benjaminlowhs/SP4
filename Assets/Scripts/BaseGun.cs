@@ -10,6 +10,7 @@ public class BaseGun : MonoBehaviour
     public GameObject crosshair;
     public TMP_Text currentLoad;
     public TMP_Text totalLoad;
+    public PauseMenu pauseMenu;
 
     public float damage = 10f;
     public float range = 100f;
@@ -76,7 +77,7 @@ public class BaseGun : MonoBehaviour
         currentLoad.text = currentMagSize.ToString();
         totalLoad.text = magSize.ToString();
 
-        if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire && currentMagSize > 0 && !isReloading)
+        if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire && currentMagSize > 0 && !isReloading && !pauseMenu.GameIsPaused)
         {
             Shoot();
             nextTimeToFire = Time.time + 1f/fireRate;

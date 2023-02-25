@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    public static bool GameIsPaused = false;
+    public bool GameIsPaused = false;
 
     public GameObject pauseMenuUI;
     public GameObject crosshair;
@@ -35,6 +35,12 @@ public class PauseMenu : MonoBehaviour
                     else
                     {
                         Pause();
+                        AudioSource[] audios = FindObjectsOfType<AudioSource>();
+
+                        foreach ( AudioSource a in audios)
+                        {
+                            a.Pause();
+                        }
                     }
                 }
                 else

@@ -35,7 +35,7 @@ public class Player : MonoBehaviour
 
         if (bloodScreenCounter > 0)
         {
-            bloodScreenCounter -= Time.fixedDeltaTime;
+            bloodScreenCounter -= Time.deltaTime;
             bloodScreen.SetActive(true);
         }
         else
