@@ -14404,6 +14404,14 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 1891033434202995705, guid: ad6172fd45db59747bd4e0e041191cbf, type: 3}
+      propertyPath: Crafting
+      value: 
+      objectReference: {fileID: 1144336920}
+    - target: {fileID: 1891033434202995705, guid: ad6172fd45db59747bd4e0e041191cbf, type: 3}
+      propertyPath: Inventory
+      value: 
+      objectReference: {fileID: 263026600}
+    - target: {fileID: 1891033434202995705, guid: ad6172fd45db59747bd4e0e041191cbf, type: 3}
       propertyPath: crosshair
       value: 
       objectReference: {fileID: 535875351}
@@ -14447,6 +14455,14 @@ PrefabInstance:
       propertyPath: GrenadeCounter
       value: 
       objectReference: {fileID: 156070600}
+    - target: {fileID: 6157703364037618491, guid: ad6172fd45db59747bd4e0e041191cbf, type: 3}
+      propertyPath: Crafting
+      value: 
+      objectReference: {fileID: 1144336920}
+    - target: {fileID: 6157703364037618491, guid: ad6172fd45db59747bd4e0e041191cbf, type: 3}
+      propertyPath: Inventory
+      value: 
+      objectReference: {fileID: 263026600}
     - target: {fileID: 6157703364037618491, guid: ad6172fd45db59747bd4e0e041191cbf, type: 3}
       propertyPath: crosshair
       value: 
