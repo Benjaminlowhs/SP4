@@ -101,6 +101,7 @@ public class Spawner : MonoBehaviour
             }
         }
 
+
         waveCounterText.text = ToRoman(currWave);
     }
 
@@ -133,7 +134,15 @@ public class Spawner : MonoBehaviour
         List<GameObject> generatedEnemies = new List<GameObject>();
         while (waveValue > 0 || generatedEnemies.Count < 50)
         {
-            int randEnemyId = Random.Range(0, enemies.Count);
+            int randEnemyId = 0;
+            if (currWave < 3)
+            {
+                randEnemyId = Random.Range(0, enemies.Count - 1);
+            }
+            else
+            {
+                randEnemyId = Random.Range(0, enemies.Count);
+            }
             int randEnemyCost = enemies[randEnemyId].cost;
 
             if (waveValue - randEnemyCost >= 0)

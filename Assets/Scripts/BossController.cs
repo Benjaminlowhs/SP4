@@ -100,7 +100,7 @@ public class BossController : MonoBehaviour
     {       
         attackAudio.Play();
         if (Vector3.Distance(enemy.transform.position, target.position) < 3f)
-            player.TakeDamage(20);
+            player.TakeDamage(30);
 
 
     }

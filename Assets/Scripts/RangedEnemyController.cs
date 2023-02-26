@@ -96,8 +96,6 @@ public class RangedEnemyController : MonoBehaviour
     void Attack()
     {        
         attackAudio.Play();
-        if (Vector3.Distance(enemy.transform.position, target.position) < 3f)
-            player.TakeDamage(10);
         GameObject spitObj = Instantiate(projectile, spawnPoint.position, spawnPoint.rotation);
         spitObj.GetComponent<Rigidbody>().velocity = spawnPoint.forward * bulletSpeed;
 
